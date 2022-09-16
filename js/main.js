@@ -105,17 +105,17 @@ function show(weather, dailyWe) {
     document.getElementById("data-table").innerHTML += `
             <table>
                 <tr>
-                    <td><img src="/img/pressure.png" width="60px"></td>
+                    <td><img src="../img/pressure.png" width="60px"></td>
                     <td>Presión</td>
                     <td>${weather.main.pressure} Pa</td>
                 </tr>
                 <tr>
-                    <td><img src="/img/humidity.png" width="60px"></td>
+                    <td><img src="../img/humidity.png" width="60px"></td>
                     <td>Humedad</td>
                     <td>${weather.main.humidity}%</td>
                 </tr>
                 <tr>
-                    <td><img src="/img/wind.png" width="60px"></td>
+                    <td><img src="../img/wind.png" width="60px"></td>
                     <td>Viento</td>
                     <td>${weather.wind.speed} km/h</td>
                 </tr>
