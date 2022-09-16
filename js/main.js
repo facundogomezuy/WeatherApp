@@ -2,12 +2,10 @@ fetch("https://api.openweathermap.org/data/2.5/weather?q=Canelones&appid=fb9f2f5
     .then((response) => response.json())
     .then((weApi) => {
         document.getElementsByClassName("listName")[0].innerHTML = "";
-        console.log(weApi);
         let time = new Date();
         fetch("https://api.openweathermap.org/data/2.5/forecast?q=Canelones&appid=fb9f2f55dfb736f6d0c89f87e2aaf0e9&units=metric&lang=es")
             .then((response) => response.json())
             .then((dailyWe) => {
-                console.log(dailyWe);
                 show(weApi, dailyWe);
             });
     });
@@ -100,7 +98,6 @@ function show(weather, dailyWe) {
             </div>
         </div>
     `;
-    console.log(dailyWe.list[0])
     document.getElementById("data-table").innerHTML = ""
     document.getElementById("data-table").innerHTML += `
             <table>
