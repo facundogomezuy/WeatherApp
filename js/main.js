@@ -1,5 +1,3 @@
-URL ="https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}&lang=es";
-
 fetch("https://api.openweathermap.org/data/2.5/weather?q=Canelones&appid=fb9f2f55dfb736f6d0c89f87e2aaf0e9&units=metric&lang=es")
     .then((response) => response.json())
     .then((weApi) => {
