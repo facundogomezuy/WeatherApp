@@ -8,6 +8,9 @@
 body{
     background-image: url(../img/background.jpg);
 }
+.containerAll{
+    display: flex;
+}
 .navBar{
     display: flex;
     flex-direction: column;
@@ -114,4 +117,34 @@ td{
     margin-right:26px;
     padding: 5px;
     border-radius: 10px;
+}
+
+
+
+@media (max-width:900px) {
+    .navBar{
+        height: 200px;
+        width: 100%;
+    }
+    .containerAll{
+        flex-direction: column;
+    }
+    .Container{
+        width: 100%;
+    }
+    .cardContainer{
+        width: 350px;
+    }
+    .moreData{
+        width: 350px;
+    }
+    .moreData tr{
+        padding: 0px;
+    }
+    .dayData{
+        width: 100%;
+    }
+    .afterWeather{
+        width: 14%;
+    }
 }

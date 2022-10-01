@@ -15,17 +15,25 @@ document.getElementById("region").addEventListener("keyup", () => {
     fetch("https://api.openweathermap.org/data/2.5/weather?q=" + valor + "&appid=fb9f2f55dfb736f6d0c89f87e2aaf0e9&units=metric&lang=es")
         .then((response) => response.json())
         .then((dato) => {
-            document.getElementsByClassName("listName")[0].innerHTML = "";
-            document.getElementsByClassName("listName")[0].innerHTML += `
-                <li style="cursor:pointer; border:1px solid black; background-color:white;" id="${dato.name}" class="cityName">${dato.name} <li>
-            `;
-            clickShow(dato);
-            fetch("https://api.openweathermap.org/data/2.5/forecast?q="+valor+"&appid=fb9f2f55dfb736f6d0c89f87e2aaf0e9&units=metric&lang=es")
-            .then((response) => response.json())
-            .then((dailyWe) => {
-                clickShow(dato,dailyWe)
-                
-            });
+            if (dato.name !== undefined){
+                document.getElementsByClassName("listName")[0].innerHTML = "";
+                document.getElementsByClassName("listName")[0].innerHTML += `
+                    <li style="cursor:pointer; border:1px solid black; background-color:white;" id="${dato.name}" class="cityName">${dato.name} <li>
+                `;
+                clickShow(dato);
+                fetch("https://api.openweathermap.org/data/2.5/forecast?q="+valor+"&appid=fb9f2f55dfb736f6d0c89f87e2aaf0e9&units=metric&lang=es")
+                .then((response) => response.json())
+                .then((dailyWe) => {
+                    clickShow(dato,dailyWe)
+                    
+                });
+            }else{
+                document.getElementsByClassName("listName")[0].innerHTML = "";
+                document.getElementsByClassName("listName")[0].innerHTML += `
+                    <li style="border:1px solid black; background-color:white;" id="${dato.name}" class="cityName">No se han encontrado resultados <li>
+                `;
+            }
+            
     });
 });
 
